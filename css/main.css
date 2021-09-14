@@ -884,14 +884,14 @@ h1 {
 } */ 
 
 .s5 .youtube_player { 
-    margin-top: 17.5%; 
+    margin-top: 20%; 
     z-index: 5; 
 }
 
 .s5 .s5_cc1 { 
     background-color: #ed0909;
-    width: 200px;
-    height: 200px;
+    width: 450px;
+    height: 450px;
     border-radius: 500px;
     position: absolute;
     top: 20%;
