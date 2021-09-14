@@ -1,0 +1,931 @@
+*{ margin: 0; padding: 0; }
+li { list-style: none; }
+a { text-decoration: none; color: #212211; display:block; }
+
+img { width: 100%; }
+.wrap { width: 100%; margin: 0 auto; position: relative; }
+canvas { position: absolute; z-index: 1; }
+
+header { 
+    width: 100%; 
+    height: 104px;
+    position: fixed; 
+    justify-content: space-between;
+    top: 0; left: 0; 
+    z-index: 1;
+}
+
+/* 폰트 */ 
+
+
+@font-face {
+    font-family: 'LotteMartHappy';
+    font-style: normal;
+    font-weight: 400;
+    src: url('http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff2') format('woff2'), url('http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'LotteMartHappy';
+    font-style: normal;
+    font-weight: 700;
+    src: url('http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyBold.woff2') format('woff2'), url('http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyBold.woff') format('woff');
+}
+
+  .lottemarthappy * {
+    font-family: 'LotteMartHappy', sans-serif;
+}
+
+/* 폰트 */ 
+
+#fp-nav ul li .fp-tooltip { color:#292929; }
+#fp-nav ul li .fp-tooltip.active { color: #fff; transition: all 0.4s; }
+
+#fp-nav ul li a span { background: #292929; }
+#fp-nav ul li a span.active { background: #fff; transition: all 0.4s;}
+
+
+.logo { 
+    width: 15vw;
+    float: left; 
+    margin-top: 2vh; 
+    margin-left: 5vw;
+}
+
+nav { 
+    display: flex; 
+    float: right; 
+    margin-top: 4vh; 
+    margin-right: 5vw;
+}
+
+nav ul li { 
+    float: left; 
+    margin-left: 5vw;
+    font-family: 'LotteMartHappy';
+    font-style: normal;
+    font-weight: 700; 
+    font-size: 1.2vw;
+}
+
+nav ul li:first-child { 
+    margin-left: 0; 
+}
+
+nav ul li a { 
+    color: #262626; 
+}
+
+nav ul li a:hover { 
+    color: #ed0909; 
+    transition: ease-in 0.4s;
+}
+
+.mobile_header { 
+    display: none; 
+}
+
+
+/* .s1_sub 폰트 */
+
+@import url('http://fonts.cdnfonts.com/css/silent-landfield');
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 폰트 END */ 
+
+/* 왼쪽 원 1 */ 
+
+.s1_cc1 { 
+    background-color: #ed0909;
+    width: 100px;
+    height: 100px;
+    border-radius: 500px;
+    position: absolute;
+    top: 10%; left: 10%;
+}
+
+/* 중간원 */ 
+
+.s1_cc2 { 
+    background-color: #ed0909;
+    width: 85px;
+    height: 85px;
+    border-radius: 500px;
+    position: absolute;
+    top: 69%; left: 49.5%;
+}
+
+/* 오른쪽 원 */ 
+
+.s1_cc3 { 
+    background-color: #ed0909;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+    position: absolute;
+    top: 25%; right: -15%;
+}
+
+/* s1 text */ 
+
+.s1_sub { 
+    font-family: 'RIDIBatang';
+    font-weight: lighter;
+}
+
+.s1_sub .up { 
+    position: absolute;
+    top: 33%;
+    left: 52.8%;
+    text-align: left;
+    font-size: 1.8vw;
+}
+
+.s1_sub .down { 
+    text-align: right; 
+    font-size: 1.2vw;
+    position: absolute;
+    top: 55%;
+    left: 53%;
+}
+
+.s1_sub h1 { 
+    position: absolute;
+    font-weight: 200;
+    top: 6%;
+    left: 34%;
+    writing-mode: horizontal-tb;
+    font-size: 15vw; 
+    color: #ed0909; 
+    -webkit-text-stroke: transparent;
+    font-family: 'Silent Landfield', sans-serif;
+}
+
+/* 나머지 section 설정 */ 
+
+h1 { 
+    -webkit-text-stroke: 2px #292929;
+    color: transparent; 
+    font-size: 6vw;
+    position: absolute;
+    writing-mode: vertical-rl;
+    top: 25%; /* 임시, 각 섹션 위치 잡아주면서 삭제할 것 */ 
+}
+
+.box { 
+    width: 87%; 
+    height: 85%;
+    margin: 0 auto; 
+    margin-top: 8vh;
+    position: relative;
+    /* background-color: #ffb0b0 */ 
+}
+
+/* section 2 css - profile */ 
+
+/* CDN */ 
+
+@font-face {
+    font-family: 'TmonMonsori';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* CDN END */ 
+
+.s2 .subject { 
+    position: absolute;
+    top: 4%; 
+    left: 5%;
+    z-index: 3;
+    font-size: 8.5vw;
+    font-family: 'TmonMonsori';
+}
+
+.s2 .box { 
+    display: flex; 
+    justify-content: space-between;
+    padding: 3vw; 
+    box-sizing: border-box; 
+}
+
+.s2 .box > div { 
+    width: 48%; 
+    /* background-color: #ddd; */ 
+}
+
+.s2_left { 
+    text-align: right;
+}
+
+.s2 .box .edu { 
+    font-size: 1vw; 
+}
+
+.name { 
+    font-size: 2vw;
+    font-family: 'LotteMartHappy', sans-serif;
+    margin: 6vh 1vw 2vh;
+
+}
+
+.edu { 
+    margin: 8vh 1vw; 
+}
+
+.s2 .box .edu { 
+    opacity: 0;
+    transition: ease-in 0.5s; 
+    transition-delay: 0;
+}
+
+.s2 .box .edu.active { 
+    opacity: 1; 
+}
+
+.edu h4 { 
+    font-family: 'LotteMartHappy', sans-serif;
+    font-size: 1.7vw;
+    margin-bottom: 2vh;
+}
+
+
+.edu > div p { 
+    line-height: 3.2vh;
+}
+
+.s2_list2 { 
+    margin: 15vh 0; 
+}
+
+.s2_cc1 { 
+    background-color: #ed0909;
+    width: 165px;
+    height: 165px;
+    border-radius: 500px;
+    position: absolute;
+    top: 14%;
+    left: 12%;
+    z-index: 1;
+}
+
+.s2_cc2 { 
+    background-color: #ed0909;
+    width: 120px;
+    height: 120px;
+    border-radius: 500px;
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    z-index: 1;
+}
+
+.s2_cc3 { 
+    background-color: #ed0909;
+    width: 80px;
+    height: 80px;
+    border-radius: 500px;
+    position: absolute;
+    top: 47%;
+    left: 9%;
+    z-index: 1;
+}
+
+/* edu p 내용 폰트 */ 
+
+@font-face {
+    font-family: 'ONE-Mobile-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 폰트 end */ 
+
+.edu p {
+    font-size: 1vw;
+    font-family: 'ONE-Mobile-Regular';
+    line-height: 3vh;
+}
+
+.edu p span { 
+    font-size: 0.8vw; 
+    color: #fd2424;
+    text-decoration: underline;
+}
+
+/* skill */ 
+
+.my-skills .skillbar_back { 
+    position: absolute;
+    top: 13%;
+    right: 31%;
+    -webkit-text-stroke: 2px #292929;
+    font-size: 3.5vw;
+    color: transparent;
+    font-family: 'LotteMartHappy';
+}
+
+.my-skills .skillbar_front { 
+    position: absolute;
+    top: 13.5%;
+    right: 30.7%;
+    font-size: 3.5vw;
+    font-family: 'LotteMartHappy';
+}
+
+/* 스크립트 */ 
+
+.skill_bar { 
+    margin-top: 8vw;
+}
+
+.bar {
+    width: 90%;
+    height: 25px;
+    background: #fff;
+    border: 1px solid black; 
+    border-radius: 5px;
+    position: relative;
+    transition: all 2s linear;
+}
+
+.bar-1,
+.my-skills {
+    width: 80%;
+    margin: 10px auto 25px;
+}
+
+.bar-1 .title { 
+    position: absolute;
+    text-align: left;
+    line-height: 26px;
+    left: 57%; 
+    z-index: 1;
+    font-family: 'ONE-Mobile-Regular';
+}
+
+.bar-inner {
+    width: 0;
+    height: 25px;
+    border-radius: 3px;
+    line-height: 25px;
+    background: #db3a34;
+    border-radius: 5px 0 0 5px;
+}
+
+.bar-percent {
+    position: absolute;
+    right: 10px;
+    top: -3px;
+    font-size: 18px;
+}
+
+/* Anohter */ 
+
+.Another .another_back { 
+    position: absolute;
+    top: 65%;
+    right: 28.3%;
+    -webkit-text-stroke: 2px #292929;
+    font-size: 3.3vw;
+    color: transparent;
+    font-family: 'LotteMartHappy';
+}
+
+.Another .another_front { 
+    position: absolute;
+    font-size: 3.3vw; 
+    font-family: 'LotteMartHappy';
+    top: 65.5%;
+    right: 28%;
+}
+
+.Another p { 
+    margin: 7vw 4vw;
+    font-size: 1vw;
+    font-family: 'ONE-Mobile-Regular';
+    line-height: 3vh;
+}
+
+.Another p span { 
+    font-weight: bold;
+    color: #ed0909; 
+}
+
+/* s3 slide */ 
+
+.s3 .box { 
+    border: 2px dashed #292929;
+}
+
+.s3 .subject { 
+    position: absolute;
+    top: 20%; 
+    right: 6%;
+    z-index: 2;
+    font-size: 8.5vw;
+    font-family: 'TmonMonsori';
+}
+
+.s3 .s3_cc3 { 
+    background-color: #ed0909;
+    width: 50px;
+    height: 50px;
+    border-radius: 500px;
+    position: absolute;
+    top: 32.2%;
+    right: 13%;
+    z-index: 1;
+}
+
+.s3 .s3_cc4 { 
+    background-color: #ed0909;
+    width: 150px;
+    height: 150px;
+    border-radius: 500px;
+    position: absolute;
+    top: 32.5%;
+    right: 3%;
+}
+
+/* swiper 슬라이드 */ 
+
+
+.s3 .box { 
+    position: relative;
+}
+
+.s3 .box .swiper { 
+    color: #292929; 
+    font-family: 'LotteMartHappy';
+}
+
+.s3 .box .swiper .swiper-slide { 
+    display: flex;
+}
+
+.s3 .box .swiper .swiper-slide > div { 
+    width: 50%; 
+}
+
+.s3 .swiper-image { 
+    width: 24vw;
+    margin-top: 18vh;
+    margin-left: 5vw;
+}
+
+.s3 .swiper-slide .swiper-des { 
+    margin-left: 3vw;
+}
+
+.s3 .swiper-slide .swiper-des .slide_name_back { 
+    position: absolute;
+    top: 20%;
+    left: 60.5%;
+    -webkit-text-stroke: 2px #292929;
+    font-size: 4vw;
+    color: transparent;
+    font-family: 'LotteMartHappy';
+}
+
+.s3 .swiper-slide .swiper-des .slide_name_Front { 
+    position: absolute;
+    top: 20.8%;
+    left: 60.2%;
+    font-size: 4vw;
+    color: #292929;
+    font-family: 'LotteMartHappy';
+}
+
+.s3 .swiper-slide .swiper-des .swiper-des-detail { 
+    margin: 27vh 5vw 2vw;
+    text-align: left;
+    font-size: 1.2vw;
+    line-height: 2vw;
+    font-family: 'ONE-Mobile-Regular';
+    font-weight: bold;
+}
+
+.s3 .swiper-slide .swiper-des .swiper-des-detail div div:nth-child(2) { 
+    font-size: 1vw;
+    font-weight: normal;
+}
+
+.s3 .swiper-slide .swiper-des .swiper-des-detail div div:nth-child(2) p {
+    font-size: 1vw;
+    float: left;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 0.5vw;
+    padding: 0 10px;
+    line-height: 4vh;
+}
+
+.s3 .swiper-slide .swiper-des .swiper-des-detail div div:nth-child(2) p:first-child { 
+    margin-left: 0;
+}
+
+.swiper-btn { 
+    float: noen; 
+    margin: 5vw 5vw; 
+}
+
+.swiper-btn a { 
+    width: 8vw; 
+    height: 5vh;
+    color: white;  
+    background-color: #292929;
+    border-radius: 10px;
+    line-height: 5vh;
+    text-align: center;
+    font-family: 'ONE-Mobile-Regular';
+    float: left;
+    margin: 0 1vw;
+    transform: scale(1.0);
+}
+
+.swiper-btn a:first-child {
+    margin: 0; 
+}
+
+.swiper-btn a:hover { 
+    color: #fd2424;
+    background-color: #fff;
+    border: 1px solid #292929;
+    transition: ease-in 0.2s;
+    transform: scale(1.1);
+}
+
+/* 원 */ 
+
+.s3 .s3_cc1 { 
+    background-color: #ed0909;
+    width: 350px;
+    height: 350px;
+    border-radius: 500px;
+    position: absolute;
+    top: 5%;
+    left: 32%;
+}
+
+.s3 .s3_cc2 { 
+    background-color: #ed0909;
+    width: 80px;
+    height: 80px;
+    border-radius: 500px;
+    position: absolute;
+    top: 77%;
+    left: 4%;
+    z-index: 1;
+}
+
+.s3 .box .swiper { 
+    opacity: 0;
+    transition: ease-in 0.5s; 
+}
+
+.s3 .box .swiper.active { 
+    opacity: 1;
+}
+
+.swiper { 
+    height: 100%; 
+}
+
+.swiper-button-prev, .swiper-button-next { 
+    top: 95%; 
+    background-color: black; 
+    width: 3vw;
+    height: 6.7vh;
+    color: white;
+}
+
+.swiper-button-prev { 
+    left: 46.5%; 
+}
+
+.swiper-button-next  { 
+    right: 45.5%;
+}
+
+/* s4 */ 
+
+.s4 .subject { 
+    position: absolute;
+    top: 18%; 
+    left: 4%;
+    z-index: 3;
+    font-size: 8.5vw;
+    font-family: 'TmonMonsori';
+    margin-top: 0; 
+}
+
+
+.s4 .box { 
+    margin-top: 14vh;
+    overflow:hidden;
+}
+.s4 .box .edit ul { 
+    display: flex; 
+    justify-content: flex-end;
+}
+
+.s4 .box .edit ul li { 
+    background-color: white; 
+    border: 2px solid #292929;
+    border-radius: 3px;
+    float: left; 
+    width: 15%; 
+    height: 80vh;
+    font-family: 'ONE-Mobile-Regular';
+    text-align: center;
+    padding: 2vw;
+    margin-left: 3vw;
+    transition: ease-in 0.4s; 
+    opacity: 0;
+}
+
+.s4 .box .edit ul li:first-child { 
+    margin-left: 0; 
+}
+
+.s4 .box .edit ul li.active { 
+    opacity: 1;
+}
+
+.edit ul li .edit-img { 
+    background-color: pink;
+    width: 100%; 
+    height: 25vh;
+    line-height: 25vh; 
+}
+
+.edit ul li .edit-des { 
+    margin-top: 8vh;
+}
+
+.edit ul li h2 { 
+    font-family: 'LotteMartHappy';
+    font-size: 1.8vw;
+    margin-bottom: 3vh;
+}
+
+.edit ul li .des_txt { 
+    height: 8vh; 
+}
+
+.edit ul li .des_txt p:first-child { 
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1vw;
+    margin-bottom: 0.4vh;
+}
+
+.edit ul li .des_txt p { 
+    line-height: 3vh;
+    text-align: justify;
+}
+
+.edit ul li .edit-des a { 
+    font-size: 1.2vw;
+    font-family: 'ONE-Mobile-Regular';
+    background-color: #292929; 
+    color: white; 
+    line-height: 60px;
+    text-align: center;
+    padding: 0.1vw;
+    margin-top: 16vh;
+    border-radius: 10px;
+    transition: ease-in 0.3s; 
+}
+
+.edit ul li .edit-des a:hover { 
+    background-color: white; 
+    border: 1px solid #292929; 
+    color: #fd2424;
+}
+
+.edit ul li .edit-img1 { 
+    background-image: url(../img/gall1.png);
+}
+
+.edit ul li .edit-img2 { 
+    background-image: url(../img/gall2.png); 
+    background-position:center;
+    background-size: cover;   
+}
+
+.edit ul li .edit-img3 { 
+    background-image: url(../img/gall3.png); 
+    background-position:center;
+    background-size: cover;
+}
+
+.edit ul li .edit-img4 { 
+    background-image: url(../img/gall4.png); 
+    background-position:center;
+    background-size: cover;
+}
+
+
+
+/* .s4 popup */ 
+
+.popup { 
+    position: absolute;
+    display: none; 
+    width: 50%; 
+    height: 80vh; 
+    left: 28%; 
+    top: 63%; 
+    background-color: rgba(0,0,0,0.85);
+}
+
+.popup .container { 
+    width: 100%; 
+    height: 100%; 
+}
+
+.popup .container img { 
+    width: 70%; 
+    position: absolute;
+    left: 14%; 
+    top: 11.5%; 
+} 
+
+.popup .prev { 
+    width: 2vw; 
+    position: absolute;
+    top: 48%; 
+    left: 5%; 
+}
+
+.popup .next { 
+    width: 2vw; 
+    position: absolute;
+    top: 48%; 
+    right: 6%;
+}
+
+.popup .close { 
+    width: 2vw; 
+    position: absolute;
+    top: 3%; 
+    right: 2%;  
+}
+
+.s4_cc1 { 
+    background-color: #ed0909;
+    width: 130px;
+    height: 130px;
+    border-radius: 500px;
+    position: absolute;
+    top: 15%;
+    left: 5%;    
+}
+
+.s4_cc2 { 
+    background-color: #ed0909;
+    width: 85px;
+    height: 85px;
+    border-radius: 500px;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.s4_cc3 { 
+    background-color: #ed0909;
+    width: 150px;
+    height: 150px;
+    border-radius: 500px;
+    position: absolute;
+    bottom: 0%;
+    left: 11.5%;
+}
+
+.s4_cc4 { 
+    background-color: #ed0909;
+    width: 250px;
+    height: 250px;
+    border-radius: 500px;
+    position: absolute;
+    top: 55%;
+    right: 2%;
+}
+
+
+/* .s5 movie */ 
+
+.s5 .box { 
+    background-coloR: #ddd; 
+    float: right; 
+    padding-left: 7vw;
+}
+
+.s5 .subject { 
+    position: absolute;
+    top: 11%; 
+    right: 6%; 
+    z-index: 15; 
+    font-size: 7.5vw;
+    font-family: 'TmonMonsori';
+}
+
+.s5 .box-in { 
+    position: relative;
+    display: flex; 
+    justify-content: left;
+    margin-top: 7%;
+    opacity: 0;
+    transition: ease-in 0.7s; 
+    z-index: 50; 
+}
+
+.s5 .box-in.active { 
+    opacity: 1;
+}
+
+.s5 .content_sub { 
+    position: absolute;
+    font-size: 3vw;
+    font-family: 'LotteMartHappy';
+    left: 2%; 
+    top: -5%;
+    z-index: 6; 
+}
+
+.s5 .contect-box { 
+    width: 25vw; 
+    height: 61.9vh; 
+    background-color: white;
+    margin-right: 2vw;
+    border-radius: 5px;
+    border: 2px solid #292929; 
+    z-index: 5;
+}
+
+/* .s5 .youtube-line { 
+    width: 44vw; 
+    height: 50vh;
+    border: 2px solid #292929; 
+    position: absolute;
+    top: 0%; 
+    left: 30%; 
+    z-index: 1;
+    background-color: transparent;
+} */ 
+
+.s5 .youtube_player { 
+    margin-top: 17.5%; 
+    z-index: 5; 
+}
+
+.s5 .s5_cc1 { 
+    background-color: #ed0909;
+    width: 200px;
+    height: 200px;
+    border-radius: 500px;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    z-index: 1;
+}
+
+.s5 .s5_cc2 { 
+    background-color: #ed0909;
+    width: 85px;
+    height: 85px;
+    border-radius: 500px;
+    position: absolute;
+    top: 27%;
+    right: 3%;
+    z-index: 1;
+}
+
+.s5 .s5_cc3 { 
+    background-color: #ed0909;
+    width: 150px;
+    height: 150px;
+    border-radius: 500px;
+    position: absolute;
+    bottom: 13%;
+    right: 12%;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
